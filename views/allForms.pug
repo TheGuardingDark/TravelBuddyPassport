@@ -1,0 +1,90 @@
+extends layout
+
+block content
+
+    .main.container
+        .formaction
+        img(src='/public/images/apple-touch-icon.png' alt='travel buddy smlogo' class='smlogo')
+        .w3-card-4.w3-center.travelform
+        
+            form(method='POST' action='/api/trips' id='updateTrip')
+                label(for='currentTrip') Trips
+                select(name='dropDown', id='')
+                    if trips
+                        for trip in trips
+                            option=trip.tripName
+                            //- id=trip.id
+
+            h2.display-4.m-b-2.aboutFlight Flight Information
+
+            form(method='POST' action='/api/flights')
+                .form-group.airline
+                    label(for='airline') Airline Name:
+                    input#airline.form-control(type='text', placeholder='Virgin Airlines', name='airline')
+                .form-group.flightConNum
+                    label(for='flightConNum') Flight Confirmation Number:
+                    input#flightConNum.form-control(type='text', placeholder='confirmation number', name='flightConNum')
+                .form-group.dateStartFly
+                    label(for='dateStartFly') Starting Date:
+                    input#dateStartFly.form-control(type='text', placeholder='03/11/2020', name='dateStartFly') 
+                .form-group.dateEndFly
+                    label(for='dateEndFly') Ending Date:
+                    input#dateEndFly.form-control(type='text', placeholder='03/12/2020', name='dateEndFly') 
+                .form-group.flightTime
+                    label(for='flightTime') Flight Time:
+                    input#flightTime.form-control(type='text', placeholder='04:30', name='flightTime') 
+                .form-group.flightConNum
+                    label(for='flightConNum') Flight Confirmation Number:
+                    input#flightConNum.form-control(type='text', placeholder='confirmation number', name='flightConNum')
+                .form-group.flightNotes
+                    label(for='flightNotes') Flight Notes:
+                    input#flightNotes.form-control(type='text', placeholder='Bring Passport', name='flightNotes') 
+            
+            h2.display-4.m-b-2.aboutFlight Lodging Information
+
+            form(method='POST' action='/api/lodgings')
+                .form-group.lodgingName
+                    label(for='lodgingName') Lodging Name:
+                    input#lodgingName.form-control(type='text', placeholder='Marriot', name='lodgingName')
+                .form-group.lodgingConNum
+                    label(for='lodgingConNum') Lodging Confirmation Number:
+                    input#lodgingConNum.form-control(type='text', placeholder='confirmation number', name='lodgingConNum')
+                .form-group.dateStartLodg
+                    label(for='dateStartLodg') Starting Date:
+                    input#dateStartLodg.form-control(type='text', placeholder='03/11/2020', name='dateStartLodg') 
+                .form-group.dateEndLodg
+                    label(for='dateEndLodg') Ending Date:
+                    input#dateEndLodg.form-control(type='text', placeholder='03/12/2020', name='dateEndLodg') 
+                .form-group.checkIn
+                    label(for='checkIn') Check-In Time:
+                    input#checkIn.form-control(type='text', placeholder='04:30', name='checkIn') 
+                .form-group.lodgingNotes
+                    label(for='lodgingNotes') Lodging Notes:
+                    input#lodgingNotes.form-control(type='text', placeholder='Ask for a toothbrush', name='lodgingNotes')
+                       
+            h2.display-4.m-b-2.aboutTrans Transport Information
+
+            form(method='POST' action='/api/transports')
+                .form-group.dealer
+                    label(for='dealer') Dealer Name:
+                    input#dealer.form-control(type='text', placeholder='Budget', name='dealer')
+                .form-group.carConNum
+                    label(for='carConNum') Car Confirmation Number:
+                    input#carConNum.form-control(type='text', placeholder='confirmation number', name='carConNum')
+                .form-group.dateStartTran
+                    label(for='dateStartTran') Starting Date:
+                    input#dateStartTran.form-control(type='text', placeholder='03/11/2020', name='dateStartTran') 
+                .form-group.dateEndTran
+                    label(for='dateEndTran') Ending Date:
+                    input#dateEndTran.form-control(type='text', placeholder='03/12/2020', name='dateEndTran') 
+                .form-group.tranTime
+                    label(for='tranTime') Pick-up Time:
+                    input#tranTime.form-control(type='text', placeholder='04:30', name='tranTime') 
+                .form-group.transportNotes
+                    label(for='transportNotes') Transportation Notes:
+                    input#transportNotes.form-control(type='text', placeholder='Ask for insurance add on', name='transportNotes')    
+                
+                
+                
+                
+                button.btn.btn-primary(type='submit') Submit Trip Information

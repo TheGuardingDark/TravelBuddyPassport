@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  
+  .w3-container-fluid
+    .w36
+      img(src='/public/images/TravelBuddy.png' alt='travel buddy logo' class='logo')
+  .w34.w3-left.welcome
+    h1 Welcome #{user.firstName}
+    //- img(src=user.picture)
+    
+  block content
+    //- pre
+    //-   code #{userProfile}

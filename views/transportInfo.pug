@@ -1,0 +1,28 @@
+extends travelInfoForm
+
+block content
+    .main.container
+        img(src='/public/images/apple-touch-icon.png' alt='travel buddy smlogo' class='smlogo')
+        .w3.w3-center.userform
+            h1.display-4.m-b-2.aboutTrans Transport Information
+
+            form(method='POST' action='/api/transports')
+                .form-group.dealer
+                    label(for='dealer') Dealer Name:
+                    input#dealer.form-control(type='text', placeholder='Budget', name='dealer')
+                .form-group.carConNum
+                    label(for='carConNum') Car Confirmation Number:
+                    input#carConNum.form-control(type='text', placeholder='confirmation number', name='carConNum')
+                .form-group.dateStartTran
+                    label(for='dateStartTran') Starting Date:
+                    input#dateStartTran.form-control(type='text', placeholder='03/11/2020', name='dateStartTran') 
+                .form-group.dateEndTran
+                    label(for='dateEndTran') Ending Date:
+                    input#dateEndTran.form-control(type='text', placeholder='03/12/2020', name='dateEndTran') 
+                .form-group.tranTime
+                    label(for='tranTime') Pick-up Time:
+                    input#tranTime.form-control(type='text', placeholder='04:30', name='tranTime') 
+                .form-group.transportNotes
+                    label(for='transportNotes') Transportation Notes:
+                    input#transportNotes.form-control(type='text', placeholder='Ask for insurance add on', name='transportNotes')
+                button.btn.btn-primary(type='submit') Submit Transport Information

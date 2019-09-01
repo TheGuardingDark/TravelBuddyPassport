@@ -1,0 +1,39 @@
+doctype html
+html
+  head
+    title=TravelBuddy
+
+    link(rel='stylesheet', href='/public/sassy/main.scss')
+    //- link(rel='stylesheet', href='/public/stylesheets/style.css')
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+    //- link(rel='stylesheet', href='/public/stylesheets/style.css')
+
+    link(rel='stylesheet', href='https://www.w3schools.com/w3css/4/w3.css')
+    link(rel='icon', href='/public/images/favicon.ico', type="image/x-icon")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Montserrat&display=swap")
+    link(rel="stylesheet",href="https://fonts.googleapis.com/css?family=Imprima&display=swap")
+    link(rel='stylesheet', href='/public/sassy/main.css')
+
+
+
+    
+  body
+    nav.w3-bar.w3-bottombar.bar.w3-border( role="navigation" )
+      .wrapclassnav
+      .w3-bar-item Welcome to TravelBuddy
+      if locals.user
+        a(href="/").w3-bar-button.w3-button Home
+        a(href="/tripDetails").w3-bar-button.w3-button Add Trip Details
+        a(href="/newTrip").w3-bar-button.w3-button Create New Trip
+        a(href="/allTrips").w3-bar-button.w3-button See All Trips
+        a(id="LogoutBtn" href="/logout").w3-bar-button.w3-button Log Out
+      else
+        a(id="LoginBtn" href="/login").w3-bar-button.w3-button Log In
+        a(id="SignUpBtn" href="/signup").w3-bar-button.w3-button Sign Up
+    block content
+
+
+    script(src="https://code.jquery.com/jquery.js")
+    script(src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous")
+    script(src="/public/js/script.js")
+

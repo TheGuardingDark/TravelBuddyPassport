@@ -1,0 +1,15 @@
+@import "text";
+@import "colors";
+@import "main.scss";
+
+
+
+.form-group {
+    
+        margin-bottom: 0;
+        position: relative;
+        margin: 0 24px 8px;
+        display: block;
+        font-family: $form-font;
+    
+}

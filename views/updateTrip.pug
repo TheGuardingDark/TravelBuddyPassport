@@ -1,0 +1,22 @@
+extends user
+
+block content
+    .main.container
+        img(src='/public/images/apple-touch-icon.png' alt='travel buddy smlogo' class='smlogo')
+        .w3.w3-center.tripform
+            h1.display-4.m-b-2.aboutTrip Update Trip 
+
+            form(method='POST' id='tripForm' action='/api/trips')
+                .form-group.tripName
+                    label(for='tripName') Name:
+                    input#tripName.form-control(type='text', placeholder='Trip Name', name='tripName')
+                .form-group.startDate
+                    label(for='startDate') Starting Date:
+                    input#startDate.form-control(type='text', placeholder='03/11/2021', name='startDate')
+                .form-group.endDate
+                    label(for='endDate') Ending Date:
+                    input#endDate.form-control(type='text', placeholder='03/21/2021', name='endDate')
+                .form-group.tripNotes
+                    label(for='tripNotes') Trip Notes:
+                    input#tripNotes.form-control(type='text', placeholder='Bring an umbrella', name='tripNotes')
+                button.btn.btn-primary(type='submit') Submit Changes

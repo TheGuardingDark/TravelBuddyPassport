@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    .main.container
+        img(src='/public/images/apple-touch-icon.png' alt='travel buddy smlogo' class='smlogo')
+        .w3.w3-left.login
+            h1.display-4.m-b-2 Login
+                form(method='POST' action='/api/login')
+                        .form-group.email
+                            label(for='email') Email:
+                            input#email.form-control(type='email', placeholder='Enter Email', name='email')
+                        .form-group.password
+                            label(for='password') Password:
+                            input#password.form-control(type='password', placeholder='Enter Password', name='password')
+                        button.btn.btn-primary(type='submit') Login
+                p.lead.m-b-4 No Account? 
+                    a(id="SignUpBtn" href="/signup").w3-bar-button.w3-button Sign Up
+            

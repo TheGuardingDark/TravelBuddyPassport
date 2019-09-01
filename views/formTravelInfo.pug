@@ -1,0 +1,59 @@
+extends user
+
+block content
+    .maincontainer
+        .formaction
+        img(src='/public/images/apple-touch-icon.png' alt='travel buddy smlogo' class='smlogo')
+            .row
+                .col-md-4.col-md-offset-4
+                <!-- Add a new trip-->
+                    button.nav-button btn btn-primary(type:'submit') Add new trip
+                        #filterType.form-control(type='options',name="travelType")
+                            option(value='0') --select a type --  
+                            option(value='1') Flight  
+                            option(value='2') Transportation
+                            option(value='3') Lodging
+                                travelType = document.getElementById('travelType');
+                                for (var i = 0; i < travelType.options.length; i++) {
+
+                                if (travelType.options[i].value = #{travelType.typeId}) {
+                                travelType.options[i].selected = 'selected';
+                                travelType.selectedIndex = i;
+                                    break;
+                                        }
+
+                                    }
+
+                            <!-- Start Date-->
+                                div.form-group
+                                    label(for='startDate') Start Date
+                                    input#startDate.form-control(type='date',placeholder="09/02/19" name="Start Date")
+
+                            <!-- End Date-->
+                                div.form-group
+                                    label(for='endDate') End Date
+                                    input#endDate.form-control(type='date',placeholder="10/31/2019" name="End Date")
+
+                            <!-- Confirmation Number-->
+                                div.form-group
+                                    label(for='confirmationNum') Confirmation Number :
+                                    input#confirmationNum.form-control(type='number',placeholder="123452" name="Confirmation Number")
+
+                            <!-- Start Time / miliary time-->
+                                div.form-group
+                                    label(for='startTime') Start Time :
+                                    input#startTime.form-control(type='text',placeholder="20:00" name="Start time")
+                            
+                            <!-- End Time / miliary time-->
+                                div.form-group
+                                    label(for='endTime') End Time :
+                                    input#endTime.form-control(type='text',placeholder="23:30" name="End time")
+
+                            <!-- Add additional Notes-->
+                                div.form-group
+                                    label(for='notes') Notes :
+                                    input#notes.form-control(type='text',placeholder="Add additional notes for trip" name="notes")
+                                
+                                	    button.btn btn-primary(type:'sumbit') Submit
+
+                        

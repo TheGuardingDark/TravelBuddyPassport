@@ -1,0 +1,64 @@
+extends user
+
+block content
+    .main.container
+
+            img(src='/public/images/apple-touch-icon.png' alt='travel buddy smlogo' class='smlogo')
+            .w3.w3-left.trips
+                h1.display-4.m-b-2.aboutTrip Current Trips
+                for trip in trips
+                    -var tripId=trip.id
+                    .w36.w3-center.tripPlans
+                            .w3body.w3-border
+                                h5.cTitle Trip Name: #{trip.tripName}  
+                                h5.cText Dates: #{trip.startDate} thru #{trip.endDate}
+                                p.cText Notes: #{trip.tripNotes} 
+                                if !cancelled
+                                    a(href='/comingSoon' class='btn cancel' data-id=tripId data-new-cancel=cancelled).w3-bar-item.w3-button Cancel Trip
+                                else
+                                    a(href='/comingSoon' class='btn cancel' data-id=tripId data-new-cancel=cancelled).w3-bar-item.w3-button Activate Trip
+                                a(href='/comingSoon' class='btn update-trip' data-id=tripId).w3-bar-item.w3-button Update Trip
+                                
+                                if flights
+                                    -var found = 0
+                                    for flight, index in flights
+                                        -var flightId = flight.TripId
+                                        if (flightId == tripId)
+                                                - found = 1
+                                                li.list-group-item #{flight.airline} #{flight.flightConNum} #{flight.flightTime}
+                                                    if !cancelled
+                                                        a(href='/comingSoon' class='btn cancel' data-id=flight.id data-new-cancel=cancelled).w3-bar-item.w3-button Cancel Flight
+                                                    else
+                                                        a(href='/comingSoon' class='btn cancel' data-id=flight.id data-new-cancel=cancelled).w3-bar-item.w3-button Activate Flight
+                                                        a(href='/tripDetails' class='btn update-flight' data-id=flight.id).w3-bar-item.w3-button Update Flight
+                                        else if (found == 0 && index == flights.length -1)
+                                            p.cardText You have no scheduled Flights for this Trip
+                                if transports
+                                    -var found = 0
+                                    for transport, index in transports
+                                        -var transportId = transport.TripId
+                                        if (transportId == tripId)
+                                            - found = 1
+                                            li.list-group-item #{transport.dealer} #{transport.carConNum} #{transport.tranTime}
+                                                if !cancelled
+                                                    a(href='/comingSoon' class='btn cancel' data-id=transport.id data-new-cancel=cancelled).w3-bar-item.w3-button Cancel Transport
+                                                else
+                                                    a(href='comingSoon' class='btn cancel' data-id=transport.id data-new-cancel=cancelled).w3-bar-item.w3-button Activate Transport
+                                                    a(href='/tripDetails' class='btn update-transport' data-id=transport.id).w3-bar-item.w3-button Update Transport
+                                        else if (found == 0 && index == transports.length -1)
+                                            p.cardText You have no scheduled Transport plans for this Trip
+
+                                if lodgings
+                                    -var found = 0
+                                    for lodging, index in lodgings
+                                        -var lodgingId = lodging.TripId
+                                        if (lodgingId == tripId)
+                                            - found = 1
+                                            li.list-group-item #{lodging.lodgingName} #{lodging.lodgingConNum} #{lodging.checkIn}
+                                                if !cancelled
+                                                    a(href='/comingSoon' class='btn cancel' data-id=lodging.id data-new-cancel=cancelled).w3-bar-item.w3-button Cancel Lodging
+                                                else
+                                                    a(href='/comingSoon' class='btn cancel' data-id=lodging.id data-new-cancel=cancelled).w3-bar-item.w3-button Activate Lodging
+                                                    a(href='/tripDetails' class='btn update-lodging' data-id=lodging.id).w3-bar-item.w3-button Update Lodging
+                                        else if (found == 0 && index == lodgings.length -1)
+                                            p.cText You have no scheduled Lodging plans for this Trip

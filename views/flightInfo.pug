@@ -1,0 +1,32 @@
+extends travelInfoForm
+
+block content
+    .main.container
+        .formaction
+        img(src='/public/images/apple-touch-icon.png' alt='travel buddy smlogo' class='smlogo')
+        .w34.w3-center.userform
+            h1.display-4.m-b-2.aboutFlight Flight Information
+
+            form(method='POST' action='/api/flights')
+                .form-group.airline
+                    label(for='airline') Airline Name:
+                    input#airline.form-control(type='text', placeholder='Virgin Airlines', name='airline')
+                .form-group.flightConNum
+                    label(for='flightConNum') Flight Confirmation Number:
+                    input#flightConNum.form-control(type='text', placeholder='confirmation number', name='flightConNum')
+                .form-group.dateStartFly
+                    label(for='dateStartFly') Starting Date:
+                    input#dateStartFly.form-control(type='text', placeholder='03/11/2020', name='dateStartFly') 
+                .form-group.dateEndFly
+                    label(for='dateEndFly') Ending Date:
+                    input#dateEndFly.form-control(type='text', placeholder='03/12/2020', name='dateEndFly') 
+                .form-group.flightTime
+                    label(for='flightTime') Flight Time:
+                    input#flightTime.form-control(type='text', placeholder='04:30', name='flightTime') 
+                .form-group.flightConNum
+                    label(for='flightConNum') Flight Confirmation Number:
+                    input#flightConNum.form-control(type='text', placeholder='confirmation number', name='flightConNum')
+                .form-group.flightNotes
+                    label(for='flightNotes') Flight Notes:
+                    input#flightNotes.form-control(type='text', placeholder='Bring Passport', name='flightNotes') 
+                button.btn.btn-primary(type='submit') Submit Flight

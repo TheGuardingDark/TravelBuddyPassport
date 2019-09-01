@@ -1,0 +1,28 @@
+extends layout
+
+block content
+
+    if errors
+        for error in errors
+            .alert.alert-warning.alert-dismissible.fade.show(role='alert')
+                message
+                button.btn.close(type='button' data-dismiss='alert' aria-label='Close')
+                    span(aria-hidden='true')&times;
+        
+    if success_message
+        .alert.alert-success.alert-dismissible.fade.show(role='alert')
+            success_message
+            button.btn.close(type='button' data-dismiss='alert' aria-label='Close')
+                span(aria-hidden='true')&times;
+        
+    if error_message
+        .alert.alert-warning.alert-dismissible.fade.show(role='alert')
+            error_message
+            button.btn.close(type='button' data-dismiss='alert' aria-label='Close')
+                span(aria-hidden='true')&times;
+
+    if error
+        .alert.alert-warning.alert-dismissible.fade.show(role='alert')
+            error
+            button.btn.close(type='button' data-dismiss='alert' aria-label='Close')
+                span(aria-hidden='true')&times;
