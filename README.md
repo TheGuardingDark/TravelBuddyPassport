@@ -1,5 +1,6 @@
 Welcome to TravelBuddy 
 
+Note: This is a reworked version using Passport instead of Auth0. Original Project can be found at https://github.com/wynnc/TravelBuddy
 
 <img width="1312" alt="Screen Shot 2019-08-13 at 2 06 34 PM" src="https://user-images.githubusercontent.com/48806630/62973798-12f0d400-bdd4-11e9-8dc3-91803e2cebdf.png">
 
