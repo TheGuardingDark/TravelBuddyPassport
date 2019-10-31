@@ -6,7 +6,7 @@ Welcome to TravelBuddy
 Travel Buddy is a simple travel organization app that helps travelers manage their plans so that their itineraries go smoothly. The user will input their information into the Travel Buddy application. The application will automatically create itineraries based on car rentals, lodging, and  air-flight information. 
 
 
-<img width="343" alt="Screen Shot 2019-08-13 at 2 09 39 PM" src="https://user-images.githubusercontent.com/48806630/62975516-c60efc80-bdd7-11e9-8628-9a4e39116e80.png"> <img width="674" alt="Screen Shot 2019-08-13 at 2 08 46 PM" src="https://user-images.githubusercontent.com/48806630/62975546-daeb9000-bdd7-11e9-8a30-5c8b6356ef42.png"> <img width="674" alt="Screen Shot 2019-08-13 at 2 09 01 PM" src="https://user-images.githubusercontent.com/48806630/62975527-ce673780-bdd7-11e9-8c37-2698f4d8f8d3.png">
+<img width="674" alt="Screen Shot 2019-08-13 at 2 08 46 PM" src="https://user-images.githubusercontent.com/48806630/62975546-daeb9000-bdd7-11e9-8a30-5c8b6356ef42.png"> <img width="674" alt="Screen Shot 2019-08-13 at 2 09 01 PM" src="https://user-images.githubusercontent.com/48806630/62975527-ce673780-bdd7-11e9-8c37-2698f4d8f8d3.png">
 
 
 
@@ -24,7 +24,7 @@ Requirements:
 
 
 Techologies used:
-
+*Passport
 
 <img width="200" alt="Screen Shot 2019-08-13 at 2 31 19 PM" src="https://user-images.githubusercontent.com/48806630/62975347-67498300-bdd7-11e9-9fb6-3ecc541acffc.png">
 
